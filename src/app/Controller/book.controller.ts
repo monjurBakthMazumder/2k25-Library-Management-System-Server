@@ -54,13 +54,22 @@ bookRoutes.get(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const book = await Book.findById(req.params.bookId);
-      sendResponse({
-        res,
-        statusCode: 200,
-        success: true,
-        message: "Book retrieved successfully",
-        data: book,
-      });
+      if (!book){
+        return sendResponse({
+          res,
+          statusCode: 404,
+          success: false,
+          message: "Book not found",
+          data: book,
+        });
+      }
+        sendResponse({
+          res,
+          statusCode: 200,
+          success: true,
+          message: "Book retrieved successfully",
+          data: book,
+        });
     } catch (error) {
       next(error);
     }
@@ -75,6 +84,15 @@ bookRoutes.put(
         new: true,
         runValidators: true,
       });
+      if (!book) {
+        return sendResponse({
+          res,
+          statusCode: 404,
+          success: false,
+          message: "Book not found",
+          data: book,
+        });
+      }
 
       sendResponse({
         res,
@@ -94,6 +112,15 @@ bookRoutes.delete(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const book = await Book.findByIdAndDelete(req.params.bookId);
+      if (!book) {
+        return sendResponse({
+          res,
+          statusCode: 404,
+          success: false,
+          message: "Book not found",
+          data: book,
+        });
+      }
       sendResponse({
         res,
         statusCode: 200,

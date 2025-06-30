@@ -27,30 +27,33 @@ borrowRoutes.post(
 
       const book = await Book.findById(bookId);
       if (!book) {
-        res.status(404).json({
+        return sendResponse({
+          res,
+          statusCode: 404,
           success: false,
           message: "Book not found",
-          error: { book: bookId },
+          data: book,
         });
-        return;
       }
 
       if (quantity <= 0) {
-        res.status(400).json({
+        return sendResponse({
+          res,
+          statusCode: 400,
           success: false,
           message: "Quantity must be positive",
-          error: { quantity },
+          data: book,
         });
-        return;
       }
 
       if (book.copies < quantity) {
-        res.status(400).json({
+        return sendResponse({
+          res,
+          statusCode: 400,
           success: false,
           message: "Not enough copies available",
-          error: { availableCopies: book.copies },
+          data: book,
         });
-        return;
       }
 
       book.copies -= quantity;
@@ -91,7 +94,7 @@ borrowRoutes.get(
         },
         {
           $lookup: {
-            from: "books", 
+            from: "books",
             localField: "_id",
             foreignField: "_id",
             as: "bookDetails",
