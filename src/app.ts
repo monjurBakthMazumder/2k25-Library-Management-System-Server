@@ -1,12 +1,14 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import globalErrorHandler from "./app/middlewares/errorHandler";
 import { bookRoutes } from "./app/Controller/book.controller";
+import { borrowRoutes } from "./app/Controller/borrow.controller";
 
 const app: Application = express();
 
 app.use(express.json());
 
 app.use("/api/books", bookRoutes);
+app.use("/api/borrow", borrowRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to libary");
