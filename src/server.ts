@@ -9,7 +9,7 @@ const PORT = 5000;
 async function main() {
   try {
     await mongoose.connect(
-      "mongodb+srv://monjur:monjur@cluster0.ib5iccz.mongodb.net/chil"
+      "mongodb+srv://monjur:monjur@cluster0.ib5iccz.mongodb.net/library"
     );
     console.log("Connected to MongoDB!!");
     server = app.listen(PORT, () => {
