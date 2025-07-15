@@ -20,6 +20,14 @@ Node.js, Express.js,TypeScript, MongoDB, Mongoose
 
 ---
 
+
+### Repositories
+
+* 🔗 **Client**: [PH-L2-Assignment-4](https://github.com/monjurBakthMazumder/PH-L2-Assignment-4)
+* 🔗 **Server**: [PH-L2-Assignment-3](https://github.com/monjurBakthMazumder/PH-L2-Assignment-3)
+
+---
+
 ### Setup Instructions
 
 - git clone https://github.com/monjurBakthMazumder/PH-L2-Assignment-3
