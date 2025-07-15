@@ -1,4 +1,4 @@
-# Library Management System Server
+# 2k25 Library Management System Server
 
 A fully featured REST API developed to manage book and borrowing records in a library system, using Express.js, TypeScript, and MongoDB (Mongoose).
 
@@ -20,11 +20,10 @@ Node.js, Express.js,TypeScript, MongoDB, Mongoose
 
 ---
 
-
 ### Repositories
 
-* 🔗 **Client**: [PH-L2-Assignment-4](https://github.com/monjurBakthMazumder/PH-L2-Assignment-4)
-* 🔗 **Server**: [PH-L2-Assignment-3](https://github.com/monjurBakthMazumder/PH-L2-Assignment-3)
+- 🔗 **Client**: [2k25 Library Management System Client](https://github.com/monjurBakthMazumder/2k25-Library-Management-System-Client)
+- 🔗 **Server**: [2k25 Library Management System Server](https://github.com/monjurBakthMazumder/2k25-Library-Management-System-Server)
 
 ---
 
