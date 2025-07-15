@@ -27,6 +27,13 @@ Node.js, Express.js,TypeScript, MongoDB, Mongoose
 
 ---
 
+### Live Server
+
+- 🔗 **Client**: [2k25 Library Management System Client](https://ph-l2-assignment-4.vercel.app/)
+- 🔗 **Server**: [2k25 Library Management System Server](https://ph-l2-assignment-3-dloc.onrender.com/)
+
+---
+
 ###  Getting Started
 
 ```bash
