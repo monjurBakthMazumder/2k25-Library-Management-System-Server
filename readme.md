@@ -1,4 +1,4 @@
-## Library Management
+# Library Management System Server
 
 A fully featured REST API developed to manage book and borrowing records in a library system, using Express.js, TypeScript, and MongoDB (Mongoose).
 
