@@ -28,14 +28,22 @@ Node.js, Express.js,TypeScript, MongoDB, Mongoose
 
 ---
 
-### Setup Instructions
+###  Getting Started
 
-- git clone https://github.com/monjurBakthMazumder/PH-L2-Assignment-3
-- cd PH-L2-Assignment-3
-- yarn (install all)
-- yarn dev (run surver)
+```bash
+# Clone the repository
+https://github.com/monjurBakthMazumder/PH-L2-Assignment-3
 
----
+# Navigate into the project
+cd PH-L2-Assignment-3
+
+# Install dependencies
+yarn
+
+# Start the development server
+yarn dev
+```
+
 ###
 
 # Author
