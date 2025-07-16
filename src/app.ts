@@ -2,10 +2,16 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import globalErrorHandler from "./app/middlewares/errorHandler";
 import { bookRoutes } from "./app/Controller/book.controller";
 import { borrowRoutes } from "./app/Controller/borrow.controller";
+import cors from "cors";
 
 const app: Application = express();
 
 app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/api/books", bookRoutes);
 app.use("/api/borrow", borrowRoutes);
