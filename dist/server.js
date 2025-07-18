@@ -19,7 +19,7 @@ const PORT = 5000;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield mongoose_1.default.connect("mongodb+srv://monjur:monjur@cluster0.ib5iccz.mongodb.net/chil");
+            yield mongoose_1.default.connect("mongodb+srv://monjur:monjur@cluster0.ib5iccz.mongodb.net/library");
             console.log("Connected to MongoDB!!");
             server = app_1.default.listen(PORT, () => {
                 console.log(`server is running on port ${PORT}`);

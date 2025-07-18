@@ -59,6 +59,15 @@ exports.bookRoutes.get("/", (req, res, next) => __awaiter(void 0, void 0, void 0
 exports.bookRoutes.get("/:bookId", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const book = yield book_model_1.Book.findById(req.params.bookId);
+        if (!book) {
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 404,
+                success: false,
+                message: "Book not found",
+                data: book,
+            });
+        }
         (0, sendResponse_1.default)({
             res,
             statusCode: 200,
@@ -77,6 +86,15 @@ exports.bookRoutes.put("/:bookId", (req, res, next) => __awaiter(void 0, void 0,
             new: true,
             runValidators: true,
         });
+        if (!book) {
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 404,
+                success: false,
+                message: "Book not found",
+                data: book,
+            });
+        }
         (0, sendResponse_1.default)({
             res,
             statusCode: 200,
@@ -92,6 +110,15 @@ exports.bookRoutes.put("/:bookId", (req, res, next) => __awaiter(void 0, void 0,
 exports.bookRoutes.delete("/:bookId", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const book = yield book_model_1.Book.findByIdAndDelete(req.params.bookId);
+        if (!book) {
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 404,
+                success: false,
+                message: "Book not found",
+                data: book,
+            });
+        }
         (0, sendResponse_1.default)({
             res,
             statusCode: 200,

@@ -32,28 +32,31 @@ exports.borrowRoutes.post("/", (req, res, next) => __awaiter(void 0, void 0, voi
         const { book: bookId, quantity, dueDate, } = yield borrowZodSchema.parseAsync(req.body);
         const book = yield book_model_1.Book.findById(bookId);
         if (!book) {
-            res.status(404).json({
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 404,
                 success: false,
                 message: "Book not found",
-                error: { book: bookId },
+                data: book,
             });
-            return;
         }
         if (quantity <= 0) {
-            res.status(400).json({
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 400,
                 success: false,
                 message: "Quantity must be positive",
-                error: { quantity },
+                data: book,
             });
-            return;
         }
         if (book.copies < quantity) {
-            res.status(400).json({
+            return (0, sendResponse_1.default)({
+                res,
+                statusCode: 400,
                 success: false,
                 message: "Not enough copies available",
-                error: { availableCopies: book.copies },
+                data: book,
             });
-            return;
         }
         book.copies -= quantity;
         if (book.copies === 0) {
